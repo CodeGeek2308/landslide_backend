@@ -30,6 +30,7 @@ def upload_image():
             file_options={"content-type": "image/jpeg"},
             upsert=True
         )
+        print("Upload response:", res) 
         return jsonify({'message': 'Image uploaded', 'filename': filename}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
